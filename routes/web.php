@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PeopleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/* people routes */
+Route::prefix('people')->group(function () {
+   /*  display first 10 people */
+    Route::get('/', [PeopleController::class, 'ShowPeople'])->name('people.show');
+     /*  display  people details */
+    Route::get('/details/{id}', [PeopleController::class, 'ShowPeopleDetail'])->name('people.showDetails');
 });
+
