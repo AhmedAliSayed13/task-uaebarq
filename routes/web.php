@@ -12,7 +12,9 @@ use App\Http\Controllers\PeopleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/',function(){
+     return redirect(route('people.show'));
+});
 /* people routes */
 Route::prefix('people')->group(function () {
    /*  display first 10 people */
