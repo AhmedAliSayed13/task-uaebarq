@@ -14,10 +14,10 @@
     ```
 
 ## exsits two link in project
-1-Show First 10 people 
-#http://127.0.0.1:8000/people
-2-Display people account details by ID
-#http://127.0.0.1:8000/people/details/1
+1-Show First 10 people <br />
+#http://127.0.0.1:8000/people <br />
+2-Display people account details by ID <br />
+#http://127.0.0.1:8000/people/details/1 <br />
 
 
 ## License
