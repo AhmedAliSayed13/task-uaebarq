@@ -117,26 +117,17 @@ trait SwapiTraits
     /**
      * Helper function to handle sending request.
      *
-     * @param  \string  $URL
+     * @param  \string  $domain
+     * @param  \string  $path
      * @param  \string  $method
      * @param  \array  $bodyData
      * @return \Illuminate\Http\Response
      */
     public function sendSwapiRequest($domain, $path, $method, $bodyData = [])
     {
-       
         $client = new Client();
         $response = $client->request($method,$domain . $path,$bodyData);
-
         return json_decode($response->getBody());
-        // if($response->failed()){
-        //     return $response;
-        // }
-        // if (property_exists($response, 'results')==false) {
-        //     // alert()->error('من فضلك اعد المحاولة مرة أخرى', 'نأسف');
-        //         // return redirect()->route('error')->with('redirect', true);
-        //         return 'من فضلك اعد المحاولة مرة أخرى';
-        // }
        
     }
 
